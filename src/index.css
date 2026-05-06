@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --color-brand-red: #EF4444;
+  --color-brand-red-dark: #B91C1C;
+}
+
+@layer base {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  }
+
+  .dark {
+    --glass-bg: rgba(24, 24, 27, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  body {
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-md border shadow-xl;
+    background-color: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-md border shadow-xl rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl;
+    background-color: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .btn-primary {
+    @apply px-6 py-2 cursor-pointer bg-brand-red text-white font-semibold rounded-xl transition-all hover:bg-brand-red-dark hover:scale-105 active:scale-95 shadow-lg shadow-red-500/20 active:shadow-none;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "SAI - Premium Student Dashboard",
+  "description": "A sophisticated student workspace featuring AI document summarization, file management, and a glassmorphic portfolio gallery.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "AI Document Summarization",
+    "File Cloud Storage",
+    "Project Portfolio",
+    "Smart Notes"
+  ]
+}

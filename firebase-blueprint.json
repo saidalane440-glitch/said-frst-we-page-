@@ -1,0 +1,63 @@
+{
+  "entities": {
+    "UploadedFile": {
+      "title": "Uploaded File",
+      "description": "Metadata for a file uploaded by a user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "url": { "type": "string" },
+        "size": { "type": "number" },
+        "createdAt": { "type": "number" },
+        "userId": { "type": "string" },
+        "summary": { "type": "string" }
+      },
+      "required": ["id", "name", "type", "url", "size", "createdAt", "userId"]
+    },
+    "PortfolioProject": {
+      "title": "Portfolio Project",
+      "description": "A project card for the student's portfolio",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "link": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "userId": { "type": "string" }
+      },
+      "required": ["id", "title", "description", "createdAt", "userId"]
+    },
+    "UserNote": {
+      "title": "User Note",
+      "description": "A personal note written by the student",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" },
+        "userId": { "type": "string" }
+      },
+      "required": ["id", "title", "createdAt", "updatedAt", "userId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/files/{fileId}": {
+      "schema": "UploadedFile",
+      "description": "User's uploaded files"
+    },
+    "/users/{userId}/projects/{projectId}": {
+      "schema": "PortfolioProject",
+      "description": "User's portfolio projects"
+    },
+    "/users/{userId}/notes/{noteId}": {
+      "schema": "UserNote",
+      "description": "User's personal notes"
+    }
+  }
+}
